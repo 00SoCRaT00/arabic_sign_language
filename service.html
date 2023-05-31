@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>TEXT TO ISL</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inspiration&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,300;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="http://vhg.cmp.uea.ac.uk/tech/jas/vhg2021/cwa/cwasa.css" /> -->
+    <!-- <script type="text/javascript" src="http://vhg.cmp.uea.ac.uk/tech/jas/vhg2021/cwa/allcsa.js"></script> -->
+    <meta http-equiv="Access-Control-Allow-Methods" content="GET">
+    <link rel="stylesheet" href="../static/css/cwasa.css">
+    <script type="text/javascript" src="../static/js/allcsa.js"></script>
+    <!-- player css and js files -->
+    <!-- <link rel="stylesheet" href="css/cwasa.css" /> -->
+    <!-- <script type="text/javascript" src="js/allcsa.js"></script> -->
+    <script language="javascript">
+        // Initial configuration
+        var initCfg = {
+            "avsbsl": ["luna", "siggi", "anna", "marc", "francoise"],
+            "avSettings": {
+                "avList": "avsbsl",
+                "initAv": "marc"
+            }
+        };
+
+        // global variable to store the sigmal list
+        var sigmlList = null;
+
+        // global variable to tell if avatar is ready or not
+        var tuavatarLoaded = false;
+
+
+        var playerAvailableToPlay = true;
+    </script>
+    <style type="text/css">
+
+    </style>
+
+</head>
+
+<body onload="CWASA.init(initCfg);">
+    <script language="javascript">
+        function playText(stext) {
+            CWASA.playSiGMLText(stext);
+        }
+        // sets url for sigml
+        function setSiGMLURL(sigmlURL) {
+            console.log("hello");
+            var loc = window.location.href;
+            var locDir = loc.substring(0, loc.lastIndexOf('/'));
+            // console.log("SiGML: "+sigmlURL);
+            // console.log("Location Dir: "+locDir);
+            sigmlURL = locDir + "/" + sigmlURL;
+            // console.log("here");
+            console.log("URL " + sigmlURL);
+            document.getElementById("URLText").value = sigmlURL;
+            return sigmlURL;
+        }
+        // starts the player animation
+        function startPlayer(sigmlURL) {
+            sigmlURL = setSiGMLURL(sigmlURL);
+            console.log("URL " + sigmlURL);
+            // Equivalent to click on Sign button
+            CWASA.getLogger("myLog", "warn");
+            CWASA.playSiGMLURL(sigmlURL);
+            CWASA.getLogger("myLog", "warn");
+        }
+    </script>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/img_490757 (1).png">
+                <span>GloSigns</span>
+            </div>
+            <div class="nav">
+                <span class="icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About-US.html">About US</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contact-US.html">Contact US</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <div class="main img">
+        <div class="container">
+            <section id="examples">
+                <nav id="examples-nav">
+                    <a href="#section1" class="active">Text Input</a>
+                    <a href="#section2">Words Examples </a>
+                </nav>
+                <div class="left">
+                    <div id="examples-content">
+                        <div id="section1" class="first active-section">
+                            <h1>Text Input</h1>
+
+                            <div class="englishInput">
+                                <form method="POST" id='form' class="inputform">
+                                    <label for="text">
+                                        please input a word or sentance :
+                                    </label>
+                                    <input id="text" type="text" name="text" autocomplete="off" class="inputtext">
+                                    <button id="submit" class="formsuubmit">Submit</button>
+                                </form>
+                            </div>
+                            <div class="curr_playing">
+                                Current Word :-
+                                <p class="curr_word_playing"></p>
+                            </div>
+                        </div>
+                        <div id="section2" class="second ">
+                            <div class="islOutput">
+                                <label for="text"> Search for ISL Word : </label>
+                                <input type="text" class="searchinput" id="myInput" onkeyup="myFunction()"
+                                    placeholder="" title="Type in a name">
+                            </div>
+                            <div class="test_word_list">
+                                Available Words:-
+                                <ul class="test_list" id="myUL">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-controls">
+                    <div class="control-group">
+                        <span class="CWASASpeed av0">
+                            <div>
+                                <label for="text">avatar speed :</label>
+                                <input type="text" class="txtLogSpeed av0" value="">
+                            </div>
+                            <div>
+                                <input type="button" value="-" class="bttnSpeedDown av0">
+                                <input type="button" value="+" class="bttnSpeedUp av0">
+                                <input type="button" value="Reset" class="bttnSpeedReset av0" disabled="">
+                            </div>
+                        </span>
+                        <div class="clear"></div>
+                        <div style=" display: flex; justify-content: space-around;">
+                            <button class="bttnPlaySiGMLURL av0">Sign</button>
+                            <button class="bttnStop av0">Stop</button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <span class="status">
+                            <label for="text">
+                                Status:
+                            </label>
+                            <input type="text" class="statusExtra av0">
+                            <input type="text" id="URLText" class="txtSiGMLURL av0 undisplayed" value=""
+                                style="display: none;" />
+
+                        </span>
+                    </div>
+                </div>
+            </section>
+            <!-- animation player frame -->
+            <!-- input for text -->
+            <div class="right">
+                <div class="player-card">
+                    <a id="player"></a>
+                    <div class="animation">
+                        <div class="player-card-content">
+                            <div class="avatar-panel">
+                                <div class="CWASAAvatar av0" align="center">
+                                    <div class="divAv av0">
+                                        <canvas class="canvasAv av0 " ondragstart="return false" width="400 !important"
+                                            height="150"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <select class="menuAv av0 custom-select">
+                                <option value="luna">luna</option>
+                                <option value="siggi">siggi</option>
+                                <option value="anna">anna</option>
+                                <option value="marc" selected="selected">marc</option>
+                                <option value="francoise">francoise</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // search function 
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+    <script>
+        const section = document.querySelector("section");
+        const observer = new IntersectionObserver((entries) => { });
+
+        observer.observe(section);
+        const navLinks = document.querySelectorAll("#examples-nav a");
+        const sections = document.querySelectorAll("#examples-content > div");
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                // remove active class from all nav links
+                navLinks.forEach((link) => link.classList.remove("active"));
+                // add active class to clicked nav link
+                e.target.classList.add("active");
+                // hide all sections
+                sections.forEach((section) => section.classList.remove("active-section"));
+                // show section that matches the href of the clicked nav link
+                const selectedSection = document.querySelector(e.target.getAttribute("href"));
+                selectedSection.classList.add("active-section");
+                // const backgroundColor = getComputedStyle(selectedSection).backgroundColor;
+                // e.target.style.backgroundColor = backgroundColor;
+            });
+        });
+    </script>
+    <script>
+        const inputElement = document.querySelector(".inputtext");
+        const labelElement = document.querySelector("label[for='text']");
+        const inputsearch = document.querySelector(".searchinput");
+        const labelsearch = document.querySelector(".islOutput label[for='text']");
+        const submitelment = document.querySelector(".formsuubmit");
+        inputElement.addEventListener("input", function () {
+            if (this.value) {
+                labelElement.classList.add("actives");
+                labelElement.innerHTML = "The word or the sentance :"
+
+            } else {
+                labelElement.classList.remove("actives");
+                labelElement.innerHTML = "Please input a word or sentance :"
+            }
+        });
+
+        inputsearch.addEventListener("input", function () {
+            if (this.value) {
+                labelsearch.classList.add("actives");
+                labelsearch.innerHTML = "ISL Word  : " + inputsearch.value;
+
+            } else {
+                labelsearch.classList.remove("actives");
+                labelsearch.innerHTML = "Search for ISL Word : "
+            }
+        });
+
+        submitelment.addEventListener("click", function () {
+            let p = document.querySelector(".curr_word_playing");
+            p.textContent = " "
+        });
+
+        const spanElem = document.querySelector('.CWASASpeed');
+        const labelElem = document.createElement('label');
+        labelElem.setAttribute('for', 'avatar-speed');
+        labelElem.innerText = 'avatar speed : ';
+        spanElem.appendChild(labelElem);
+    </script>
+    <script type="text/javascript" src="../static/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/player.js') }}"></script> -->
+</body>
+
+</html>

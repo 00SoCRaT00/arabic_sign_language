@@ -1,0 +1,1119 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Start Variables */
+:root {
+    --main-color: #10cab7;
+    --secondary-color: #2c4755;
+    --section-padding: 60px;
+    --section-background: #f6f6f6;
+    --main-duration: 0.5s;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #435359;
+    transition: background-color 0.5s ease;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1ab188;
+    border-radius: 3px;
+    HEIGHT: 26PX;
+    transition: background-color 0.5s ease;
+}
+
+body {
+    background: #526D82;
+    overflow: scroll;
+    font-family: 'Sofia Sans', sans-serif;
+}
+
+
+
+a {
+    text-decoration: none;
+    transition: .5s ease;
+}
+
+.clear {
+    clear: both;
+}
+
+header {
+    background-color: #091224;
+    padding: 5px 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 52222;
+}
+
+.container {
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+/* start header  */
+
+.nav {
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    color: #fff;
+    padding: 0 16px;
+    width: 65%;
+    align-content: center;
+
+}
+
+.logo {
+    margin-left: 20px;
+    width: 30%;
+    color: white;
+}
+
+.logo img {
+    width: 60px;
+    transform: rotate(38.17deg) translateY(-8px);
+
+
+}
+
+.logo span {
+    font-family: 'Inspiration', cursive;
+    font-size: 50px;
+    font-weight: 500;
+    margin-left: 8px;
+    color: #f6f6ff;
+}
+
+
+header .nav {
+    position: relative;
+}
+
+header .nav:hover .icon span:nth-child(2) {
+    width: 100%;
+}
+
+header .nav .icon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+header .nav .icon span {
+    background-color: white;
+    margin-bottom: 5px;
+    height: 2px;
+}
+
+header .nav .icon span:first-child {
+    width: 100%;
+}
+
+header .nav .icon span:nth-child(2) {
+    width: 60%;
+    transition: var(--main-duration);
+}
+
+header .nav .icon span:last-child {
+    width: 100%;
+}
+
+
+
+@media (max-width: 767px) {
+    .img .container {
+        margin: 0 auto;
+        padding: 0px 20px;
+        justify-content: center;
+
+    }
+
+    
+
+
+
+
+    .main .container {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: right;
+        align-items: flex-end;
+        color: #fff;
+        padding: 0 16px;
+        width: 100px;
+        align-content: center;
+
+    }
+
+    header .nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: #f6f6f6;
+        position: absolute;
+        right: 5;
+        min-width: 200px;
+        top: calc(100% + 10px);
+        display: none;
+        z-index: 1;
+        opacity: 80%;
+    }
+
+    header .nav li {
+        padding: 0px 0px 0px 00px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    header .nav ul::before {
+        content: "";
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent #f6f6f6 transparent;
+        position: absolute;
+        right: 5px;
+        top: -20px;
+    }
+
+    header .nav:hover ul {
+        display: block;
+    }
+
+    header .nav ul li a {
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #333;
+        transition: var(--main-duration);
+    }
+
+    header .nav ul li a:hover {
+        padding-left: 25px;
+    }
+
+    header .nav ul li:not(:last-child) a {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+        color: white;
+        width: 191px;
+        margin-left: 0px;
+    }
+
+    .logo img {
+        width: 40px;
+        transform: rotate(38.17deg) translateY(-8px);
+        margin-top: 5px;
+        margin-right: 8px;
+    }
+
+    .logo span {
+        font-family: 'Inspiration', cursive;
+        font-size: 30px;
+        font-weight: 500;
+        margin-left: 8px;
+        color: #f6f6ff;
+    }
+
+    .canvasAv {
+        width: 300px;
+        height: 275px;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+
+    }
+
+
+
+    .nav li {
+        padding: 0px 0px 0px 20px;
+        font-size: 20px;
+    }
+
+    .nav a {
+        font-size: 20px;
+        color: #b4b4b7;
+
+    }
+
+    header .nav .icon {
+        display: none;
+    }
+}
+
+
+@media (min-width: 1450px) {
+    .container {
+        width: 1400px;
+
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: #b4b4b7;
+        padding: 20px;
+        font-size: 25px;
+    }
+
+}
+
+.nav a:hover {
+    color: #1ab188;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    margin-bottom: 0;
+    padding-right: 15px;
+}
+
+.nav li {
+    padding: 0px 0px 0px 60px;
+    font-size: 35px;
+}
+
+
+.img {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(360deg, transparent, rgb(8, 7, 7)), url(../img/rm378-09.jpg);
+}
+@media (max-width: 767px) {
+    .img {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 3rem;
+        background-position: center;
+        background-size: cover;
+        background-image: linear-gradient(360deg, transparent, rgb(8, 7, 7)), url(../img/rm378-09.jpg);
+    }
+}
+/* start example section  */
+
+
+/* start example nav  */
+
+
+#examples {
+    background: rgb(6 12 22 / 82%);
+    padding: 40px 40px 0px 40px;
+    width: 60%;
+    margin: 0px auto;
+    border-radius: 4px;
+    margin-top: 40px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+#examples #examples-nav {
+    content: "";
+    display: table;
+    clear: both;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+
+#examples #examples-nav a {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    background: rgba(160, 179, 176, 0.25);
+    color: #a0b3b0;
+    font-size: 25px;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+#examples #examples-nav a:hover {
+    background: rgba(26, 177, 136, 0.25);
+    color: #ffffff;
+}
+
+@media (max-width: 767px) {
+    #examples {
+        background: rgb(6 12 22 / 82%);
+        padding: 20px 20px 0px 20px;
+        width: 100%;
+        margin: 0px auto;
+        border-radius: 4px;
+        margin-top: 40px;
+        box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    }
+
+    #examples #examples-nav a {
+        display: block;
+        text-decoration: none;
+        padding: 15px;
+        background: rgba(160, 179, 176, 0.25);
+        color: #a0b3b0;
+        font-size: 15px;
+        float: left;
+        width: 50%;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.5s ease;
+    }
+}
+
+
+/* end example nav  */
+
+.active {
+    background-color: #1ab188 !important;
+    color: white !important;
+}
+
+
+/* start left side  */
+
+.left #examples-content>div {
+    display: none;
+    animation: fade-in 0.5s ease;
+    opacity: 0;
+}
+
+.left #examples-content>div.active-section {
+    display: block;
+    opacity: 1;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* #examples-nav a:active {} */
+
+.left {
+    display: block;
+    margin-top: 10px;
+}
+
+.left h1 {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 300;
+    margin: 0 0 20px;
+}
+
+
+/* start first section  */
+
+.left #examples-content .first .englishInput {
+    position: relative;
+    height: 100px;
+}
+
+.left #examples-content .first .englishInput form {
+    width: 100%;
+}
+
+.left #examples-content .first .englishInput label {
+    position: absolute;
+    transform: translateY(6px);
+    left: 11px;
+    top: -3px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.25s ease;
+    pointer-events: none;
+    font-size: 22px;
+}
+
+.left #examples-content .first .englishInput label.actives {
+    transform: translateY(50px);
+    left: 5px;
+    font-size: 14px;
+}
+
+.left #examples-content .first .englishInput .inputtext {
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #ddd;
+    color: #fff;
+    border-radius: 0;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    font-family: Arial, sans-serif;
+    /* replace with an Arabic font */
+
+}
+
+.left #examples-content .first .englishInput .inputtext:focus {
+    outline: 0;
+    border-color: #1ab188;
+}
+
+.left #examples-content .first .englishInput .formsuubmit {
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    float: right;
+    padding: 7px 20px;
+    font-size: 1.3rem;
+    margin-top: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: #1ab188;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.left #examples-content .first .englishInput .formsuubmit:hover {
+    background-color: rgb(21 134 103 / 95%);
+}
+
+.left #examples-content .first .curr_playing {
+    color: white;
+    font-size: 20px;
+}
+
+.left #examples-content .first .curr_playing .curr_word_playing {
+    color: #1ab188;
+    font-size: 30px;
+    height: 45px;
+    margin-bottom: 40px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+
+@media (max-width: 767px) {
+
+    .left #examples-content .first .englishInput .inputtext {
+        font-size: 15px;
+        display: block;
+        width: 100%;
+        height: 80%;
+        padding: 10px 10px;
+        background: none;
+        background-image: none;
+        border: 1px solid #ddd;
+        color: #fff;
+        border-radius: 0;
+        transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        font-family: Arial, sans-serif;
+        /* replace with an Arabic font */
+
+    }
+
+    .left #examples-content .first .englishInput .formsuubmit {
+        border: 0;
+        outline: none;
+        border-radius: 0;
+        float: right;
+        padding: 7px 20px;
+        font-size: 15px;
+        margin-top: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        background: #1ab188;
+        color: #ffffff;
+        transition: all 0.5s ease;
+    }
+
+    .left #examples-content .first .curr_playing .curr_word_playing {
+        color: #1ab188;
+        font-size: 15px;
+        height: 45px;
+        margin-bottom: 10px;
+        margin-top: 8px;
+        text-align: center;
+    }
+
+}
+
+
+/* end first section */
+
+
+/* start second section  */
+
+.left #examples-content .second .islOutput {
+    position: relative;
+    padding: 10px 0;
+}
+
+.left #examples-content .second .islOutput label {
+    position: absolute;
+    transform: translateY(6px);
+    left: 6px;
+    top: -3px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.25s ease;
+    pointer-events: none;
+    padding-left: 5px;
+    font-size: 22px;
+}
+
+.left #examples-content .second .islOutput label.actives {
+    transform: translateY(50px);
+    left: 3px;
+    top: -8px;
+    font-size: 21px;
+}
+
+.left #examples-content .second .islOutput .searchinput {
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    margin-top: -10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #ddd;
+    color: #fff;
+    border-radius: 0;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.left #examples-content .second .islOutput .searchinput:focus {
+    outline: 0;
+    border-color: #1ab188;
+}
+
+.left #examples-content .second .test_word_list {
+    margin-bottom: 30px;
+    margin-top: 22px;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.left #examples-content .second .test_word_list ul {
+    height: 158px;
+    overflow-y: scroll;
+    width: 100%;
+    font-size: 20px;
+    list-style: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    transition: all 0.5s ease;
+}
+
+.left #examples-content .second .test_word_list ul li {
+    text-decoration: none;
+    border-bottom: 0.5px solid #1ab188;
+    background-color: #435359;
+}
+
+.left #examples-content .second .test_word_list ul li:hover {
+    text-decoration: none;
+    background-color: #1ab188;
+    color: white !important;
+    cursor: pointer;
+}
+
+.left #examples-content .second .test_word_list ul li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.left #examples-content .second .test_word_list ul li a:hover {
+    color: white;
+    cursor: pointer;
+}
+
+#examples .player-controls {
+    margin-bottom: 10px;
+    padding: 30px 0px;
+}
+
+#examples .player-controls .bttnPlaySiGMLURL,
+#examples .player-controls .bttnStop,
+#examples .player-controls .bttnSpeedReset,
+#examples .player-controls .bttnSpeedDown,
+#examples .player-controls .bttnSpeedUp {
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    padding: 7px 25px;
+    font-size: 1.3rem;
+    margin-top: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: #1ab188;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+@media (max-width: 767px) {
+
+    #examples .player-controls .bttnPlaySiGMLURL,
+    #examples .player-controls .bttnStop,
+    #examples .player-controls .bttnSpeedReset,
+    #examples .player-controls .bttnSpeedDown,
+    #examples .player-controls .bttnSpeedUp {
+        border: 0;
+        outline: none;
+        border-radius: 0;
+        padding: 3px 15px 1px 15px;
+        ;
+        font-size: 22px;
+        margin-top: 0;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: normal;
+        background: #1ab188;
+        color: #ffffff;
+        transition: all 0.5s ease;
+    }
+}
+
+#examples .player-controls .bttnPlaySiGMLURL:hover,
+#examples .player-controls .bttnStop:hover,
+#examples .player-controls .bttnSpeedReset:hover,
+#examples .player-controls .bttnSpeedDown:hover,
+#examples .player-controls .bttnSpeedUp:hover:hover {
+    background-color: rgb(21 134 103 / 95%);
+}
+
+#examples .player-controls .bttnStop[disabled] {
+    background-color: rgb(21 134 103 / 95%);
+}
+
+.hover-class {
+    background-color: rgb(21 134 103 / 95%) !important;
+    cursor: none;
+}
+
+#examples .player-controls label {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#examples .player-controls .txtGloss {
+    font-size: 22px;
+    width: 70%;
+    height: 100%;
+    padding: 5px 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #ddd;
+    float: right;
+    color: #fff;
+    border-radius: 0;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+#examples .player-controls .status {
+    position: relative;
+}
+
+#examples .player-controls .status label {
+    position: absolute;
+    transform: translateY(6px);
+    left: 11px;
+    top: -20px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.25s ease;
+    pointer-events: none;
+    font-size: 22px;
+}
+
+#examples .player-controls .CWASASpeed {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    height: 40px;
+}
+
+#examples .player-controls .CWASASpeed .txtLogSpeed {
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #ddd;
+    color: #fff;
+    border-radius: 0;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+#examples .player-controls .CWASASpeed .txtLogSpeed:focus {
+    outline: 0;
+    border-color: #1ab188;
+}
+
+#examples .player-controls .CWASASpeed label {
+    position: absolute;
+    transform: translateY(6px);
+    left: 0px;
+    top: -42px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.25s ease;
+    pointer-events: none;
+    font-size: 22px;
+}
+
+#examples .player-controls .CWASASpeed div:nth-child(1) {
+    float: left;
+    width: 50%;
+    /* CSS properties */
+}
+
+#examples .player-controls .CWASASpeed div:nth-child(2) {
+    float: right;
+    margin-top: -23px;
+    /* CSS properties */
+}
+
+#examples .player-controls .CWASASpeed div:nth-child(2) .bttnSpeedReset,
+#examples .player-controls .CWASASpeed div:nth-child(2) .bttnSpeedDown,
+#examples .player-controls .CWASASpeed div:nth-child(2) .bttnSpeedUp {
+    padding: 3px 15px 1px 15px;
+    margin: 0 1px;
+    font-size: 22px;
+    /* CSS properties */
+}
+
+#examples .player-controls .CWASASpeed div:nth-child(2) .bttnSpeedReset {
+    margin-right: 0;
+}
+
+#examples .player-controls .bttnStop {
+    float: right;
+}
+
+.left .player-controls {
+    display: block;
+}
+
+#examples .player-control .bttnSpeedDown,
+#examples .player-control .bttnSpeedUp {
+    width: 75px;
+}
+
+#examples .player-controls .control-group:nth-child(2) {
+    margin-top: 40px;
+}
+
+#examples .player-controls .status label {
+    position: absolute;
+    transform: translateY(6px);
+    left: 1px;
+    top: -38px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.25s ease;
+    pointer-events: none;
+    font-size: 22px;
+}
+
+#examples .player-controls .status .statusExtra {
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #ddd;
+    color: #fff;
+    border-radius: 0;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    text-align: center;
+}
+
+#examples .player-controls .status .txtSiGMLURL  {
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #ddd;
+    color: #fff;
+    border-radius: 0;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    text-align: center;
+}
+
+#examples .player-controls .status .statusExtra:focus {
+    outline: 0;
+    border-color: #1ab188;
+}
+
+
+@media (max-width: 767px) {
+
+    #examples .player-controls .CWASASpeed {
+        position: relative;
+        display: block;
+        margin-bottom: 00px;
+        margin-top: 00px;
+        height: 40px;
+    }
+
+    #examples .player-controls .CWASASpeed div:nth-child(1) {
+        width: 100%;
+        
+        /* CSS properties */
+    }
+
+    #examples .player-controls .CWASASpeed div:nth-child(2) {
+        float: right;
+        margin-top: -10px;
+    }
+
+    #examples .player-controls .CWASASpeed div:nth-child(2) .bttnSpeedReset,
+    #examples .player-controls .CWASASpeed div:nth-child(2) .bttnSpeedDown,
+    #examples .player-controls .CWASASpeed div:nth-child(2) .bttnSpeedUp {
+        padding: 3px 15px 1px 15px;
+        margin: 0 1px;
+        font-size: 22px;
+        /* CSS properties */
+    }
+
+}
+
+@media (max-width: 767px) {
+    @media (max-width: 767px) {}
+
+    #examples .player-controls .bttnStop {
+        float: none;
+    }
+
+    .left .player-controls {
+        display: block;
+    }
+
+    #examples .player-control .bttnSpeedDown,
+    #examples .player-control .bttnSpeedUp {
+        width: 75px;
+    }
+
+    #examples .player-controls .control-group:nth-child(2) {
+        margin-top: 40px;
+    }
+
+    #examples .player-controls .status label {
+        position: absolute;
+        transform: translateY(6px);
+        left: 1px;
+        top: -38px;
+        color: rgba(255, 255, 255, 0.5);
+        transition: all 0.25s ease;
+        pointer-events: none;
+        font-size: 22px;
+    }
+
+    #examples .player-controls .status .statusExtra {
+        font-size: 22px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px;
+        background: none;
+        background-image: none;
+        border: 1px solid #ddd;
+        color: #fff;
+        border-radius: 0;
+        transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        text-align: center;
+    }
+
+    #examples .player-controls .status .txtSiGMLURL {
+        font-size: 22px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px;
+        background: none;
+        background-image: none;
+        border: 1px solid #ddd;
+        color: #fff;
+        border-radius: 0;
+        transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        text-align: center;
+    }
+
+    #examples .player-controls .status .statusExtra:focus {
+        outline: 0;
+        border-color: #1ab188;
+    }
+}
+
+/* start right  */
+
+.right {
+    width: 40%;
+    margin-top: 40px;
+}
+
+.right .avatar-panel {
+    height: 688px;
+    background-color: #435359;
+}
+
+@media (max-width: 767px) {
+    .right {
+        width: 100%;
+        display: block;
+        margin-top: 40px;
+    }
+
+}
+
+
+/* Style the select element */
+
+.menuAv {
+    width: 550px;
+    padding: 12px;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    outline: 0;
+}
+
+
+/* Style the options */
+
+.menuAv option {
+    padding: 20px;
+    font-size: 20px;
+    outline: 0;
+    border: none;
+}
+
+
+/* Style the selected option */
+
+
+/* Style the arrow of the select element */
+
+.menuAv::before {
+    content: "";
+    right: 10px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+    position: absolute;
+    pointer-events: none;
+}
+
+
+/* Remove the border around the options */
+
+select {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.custom-select {
+    position: relative;
+    font-family: Arial;
+    background-color: #1ab188;
+    color: #fff;
+    width: 100%;
+}
+
+.custom-select:hover {
+    cursor: pointer;
+}
+
+.custom-select select {
+    display: none;
+}
+
+.custom-select option {
+    color: black;
+}
+
+.custom-select option:hover {
+    cursor: pointer
+}
+
+.canvasAv {
+
+    width: 300px;
+    height: 675px;
+}
+
+@media (max-width: 767px) {
+    .canvasAv {
+        width: 300px;
+        height: 275px;
+    }
+
+    .right .avatar-panel {
+        height: 300px;
+        background-color: #435359;
+    }
+
+    .txtSiGMLURL {
+        font-family: sans-serif;
+        font-size: 0.9em;
+        width: 24em;
+    }
+}
